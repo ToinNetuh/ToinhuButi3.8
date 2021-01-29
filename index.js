@@ -29,6 +29,7 @@ const { recognize } = require('./lib/ocr')
 
 /******BEGIN OF NPM PACKAGE INPUT******/
 const fs = require('fs')
+const kill = require('./src/kill')
 const moment = require('moment-timezone')
 const { exec } = require('child_process')
 const kagApi = require('@kagchi/kag-api')
@@ -1017,6 +1018,38 @@ case 'timer':
 					buffer = await getBuffer(anu.result)
 					client.sendMessage(from, buffer, image, {quoted: mek})
 					break	
+					case 'ass':
+            if (isGroupMsg) {
+                if (!isNsfw) return kill.reply(from, mess.error.Ac, id)
+            	if (triple == 1) {
+            		const bows1 = await axios.get('https://meme-api.herokuapp.com/gimme/LegalTeens');
+            		let { postlink, title, subreddit, url, nsfw, spoiler } = bows1.data
+            		await kill.sendFileFromUrl(from, `${url}`, '', `${title}`, id)
+            	}else if (triple == 2) {
+            		const bows1 = await axios.get('https://meme-api.herokuapp.com/gimme/ass');
+            		let { postlink, title, subreddit, url, nsfw, spoiler } = bows1.data
+            		await kill.sendFileFromUrl(from, `${url}`, 'meme.jpg', `${title}`, id)
+            	}else if (triple == 3) {
+            		const bows1 = await axios.get('https://meme-api.herokuapp.com/gimme/bigasses');
+            		let { postlink, title, subreddit, url, nsfw, spoiler } = bows1.data
+            		await kill.sendFileFromUrl(from, `${url}`, 'meme.jpg', `${title}`, id)
+            	}	
+             } else {
+            	if (triple == 1) {
+            		const bows1 = await axios.get('https://meme-api.herokuapp.com/gimme/LegalTeens');
+            		let { postlink, title, subreddit, url, nsfw, spoiler } = bows1.data
+            		await kill.sendFileFromUrl(from, `${url}`, 'meme.jpg', `${title}`, id)
+            	}else if (triple == 2) {
+            		const bows1 = await axios.get('https://meme-api.herokuapp.com/gimme/ass');
+            		let { postlink, title, subreddit, url, nsfw, spoiler } = bows1.data
+            		await kill.sendFileFromUrl(from, `${url}`, 'meme.jpg', `${title}`, id)
+            	}else if (triple == 3) {
+            		const bows1 = await axios.get('https://meme-api.herokuapp.com/gimme/bigasses');
+            		let { postlink, title, subreddit, url, nsfw, spoiler } = bows1.data
+            		await kill.sendFileFromUrl(from, `${url}`, 'meme.jpg', `${title}`, id)
+            	}	
+            }
+            break	
 				case 'add':
 					client.updatePresence(from, Presence.composing) 
 					if (!isGroup) return reply(mess.only.group)
