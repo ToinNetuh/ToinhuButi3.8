@@ -269,11 +269,6 @@ async function starts() {
     			const apakah = ['Ya','Tidak']
         		const bisakah = ['Bisa','Tidak Bisa']
 				const kapankah = ['Hari Lagi','Minggu Lagi','Bulan Lagi','Tahun Lagi']
-				const { type, id, from, t, sender, author, isGroupMsg, chat, chatId, caption, isMedia, mimetype, quotedMsg, quotedMsgObj, mentionedJidList } = message
-        let { body } = message
-        const { name, formattedTitle } = chat
-        let { pushname, verifiedName, formattedName } = sender
-        pushname = pushname || verifiedName || formattedName
 			const botNumber = client.user.jid
 			const ownerNumber = ["556296638900@s.whatsapp.net"] // replace this with your number
 			const nomorOwner = [ownerNumber]
@@ -816,6 +811,14 @@ case 'timer':
 					anu = await fetchJson(`https://mhankbarbars.herokuapp.com/api/hilih?teks=${body.slice(7)}`, {method: 'get'})
 					reply(anu.result)
 					break
+					case 'slap':
+                    kapankah = body.slice(1)
+					const slap =['anjing','babi lu','anak anjing','udah tolol nub Lagi','muka lo kek monyet','udah jomblo sendirian lagi dirumah tolol','so so an mau punya pacar muka aja kek monyet lepass dari kandang','ganteng doang di toxic aja dibilang baperan','pantek kau','bangsat kau','ku entod kalian nangis kau','memek lu semua','lihat anak anjing lagi baca','ganteng doang jemput cewe dipanggang','kamu cantik beb bullshit anjing cowo buaya','anak dajjal','puki lu','anjing ngajak gelud','sama hantu takut cupu ngentod','cupu cupu aja gausah bacot','kontol lu semua','bocah lu semua kontol','3 Hari Lagi']
+					const ple = slap[Math.floor(Math.random() * slap.length)]
+					pod = await getBuffer(`https://media.giphy.com/media/S8507sBJm1598XnsgD/source.gif`)
+					client.sendMessage(from, pod, image, { quoted: mek, caption: '*Toxic*\n\n'+ ple })
+					await limitAdd(sender)
+					break
 				case 'tagall':
 				client.updatePresence(from, Presence.composing) 
 					if (!isGroup) return reply(mess.only.group)
@@ -1024,7 +1027,7 @@ case 'timer':
 					client.sendMessage(from, buffer, image, {quoted: mek})
 					break	
 					case 'ass':
-            if (isGroupMsg) {
+            if (isGroup) {
                 if (!isNsfw) return kill.reply(from, mess.error.Ac, id)
             	if (triple == 1) {
             		const bows1 = await axios.get('https://meme-api.herokuapp.com/gimme/LegalTeens');
@@ -1448,6 +1451,90 @@ case 'timer':
 						if (!isNsfw) return reply('❌ *NSFW NAUM ATIVADO* ❌')
                                                 if (!isUser) return reply(mess.only.daftarB)
 						res = await fetchJson(`https://tobz-api.herokuapp.com/api/nsfwneko?apikey=BotWeA`, {method: 'get'})
+						buffer = await getBuffer(res.result)
+						client.sendMessage(from, buffer, image, {quoted: mek, caption: 'mesum'})
+					} catch (e) {
+						console.log(`Error :`, color(e,'red'))
+						reply('❌ *ERROR* ❌')
+					}
+					break
+					case 'nsfwneko':
+				    try{
+						if (!isNsfw) return reply('❌ *NSFW NAUM ATIVADO* ❌')
+                                                if (!isUser) return reply(mess.only.daftarB)
+						res = await fetchJson(`https://meme-api.herokuapp.com/gimme/LegalTeens`, {method: 'get'})
+						buffer = await getBuffer(res.result)
+						client.sendMessage(from, buffer, image, {quoted: mek, caption: 'mesum'})
+					} catch (e) {
+						console.log(`Error :`, color(e,'red'))
+						reply('❌ *ERROR* ❌')
+					}
+					break
+					case 'ass':
+				    try{
+						if (!isNsfw) return reply('❌ *NSFW NAUM ATIVADO* ❌')
+                                                if (!isUser) return reply(mess.only.daftarB)
+						res = await fetchJson(`https://meme-api.herokuapp.com/gimme/ass`, {method: 'get'})
+						buffer = await getBuffer(res.result)
+						client.sendMessage(from, buffer, image, {quoted: mek, caption: 'mesum'})
+					} catch (e) {
+						console.log(`Error :`, color(e,'red'))
+						reply('❌ *ERROR* ❌')
+					}
+					break
+					case 'ass1':
+				    try{
+						if (!isNsfw) return reply('❌ *NSFW NAUM ATIVADO* ❌')
+                                                if (!isUser) return reply(mess.only.daftarB)
+						res = await fetchJson(`https://meme-api.herokuapp.com/gimme/bigasses`, {method: 'get'})
+						buffer = await getBuffer(res.result)
+						client.sendMessage(from, buffer, image, {quoted: mek, caption: 'mesum'})
+					} catch (e) {
+						console.log(`Error :`, color(e,'red'))
+						reply('❌ *ERROR* ❌')
+					}
+					break
+					case 'ass2':
+				    try{
+						if (!isNsfw) return reply('❌ *NSFW NAUM ATIVADO* ❌')
+                                                if (!isUser) return reply(mess.only.daftarB)
+						res = await fetchJson(`https://tobz-api.herokuapp.com/api/nsfwneko?apikey=BotWeA`, {method: 'get'})
+						buffer = await getBuffer(res.result)
+						client.sendMessage(from, buffer, image, {quoted: mek, caption: 'mesum'})
+					} catch (e) {
+						console.log(`Error :`, color(e,'red'))
+						reply('❌ *ERROR* ❌')
+					}
+					break
+					case 'ass3':
+				    try{
+						if (!isNsfw) return reply('❌ *NSFW NAUM ATIVADO* ❌')
+                                                if (!isUser) return reply(mess.only.daftarB)
+						res = await fetchJson(`https://meme-api.herokuapp.com/gimme/LegalTeens`, {method: 'get'})
+						buffer = await getBuffer(res.result)
+						client.sendMessage(from, buffer, image, {quoted: mek, caption: 'mesum'})
+					} catch (e) {
+						console.log(`Error :`, color(e,'red'))
+						reply('❌ *ERROR* ❌')
+					}
+					break
+					case 'ass4':
+				    try{
+						if (!isNsfw) return reply('❌ *NSFW NAUM ATIVADO* ❌')
+                                                if (!isUser) return reply(mess.only.daftarB)
+						res = await fetchJson(`https://meme-api.herokuapp.com/gimme/ass`, {method: 'get'})
+						buffer = await getBuffer(res.result)
+						client.sendMessage(from, buffer, image, {quoted: mek, caption: 'mesum'})
+					} catch (e) {
+						console.log(`Error :`, color(e,'red'))
+						reply('❌ *ERROR* ❌')
+					}
+					break
+					case 'ass5':
+				    try{
+						if (!isNsfw) return reply('❌ *NSFW NAUM ATIVADO* ❌')
+                                                if (!isUser) return reply(mess.only.daftarB)
+						res = await fetchJson(`https://meme-api.herokuapp.com/gimme/bigasses`, {method: 'get'})
 						buffer = await getBuffer(res.result)
 						client.sendMessage(from, buffer, image, {quoted: mek, caption: 'mesum'})
 					} catch (e) {
