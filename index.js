@@ -1936,10 +1936,10 @@ case 'timer':
                                         tels = body.slice(4)
                                         if (args.length < 1) return reply('marque uma pessoa')
                                         if (!isUser) return reply(mess.only.daftarB)
-                                        var nom1 = mek.participant
+                                        var nom = mek.participant
                                         const tag1 = {
                                                 text: `@${nom.split("@s.whatsapp.net")[0]} *Deu um beijo em ${tels} eitar*`,
-                                                contextInfo: { mentionedJid: [nom1] }
+                                                contextInfo: { mentionedJid: [nom] }
                                         }
                                         client.sendMessage(from, tag1, text, {quoted: mek})
 										break
