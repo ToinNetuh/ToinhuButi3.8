@@ -1932,16 +1932,16 @@ case 'timer':
                                         }
                                         client.sendMessage(from, tag, text, {quoted: mek})
 										break
-										case 'kiss':
+										case 'beijor':
                                         tels = body.slice(4)
                                         if (args.length < 1) return reply('marque uma pessoa')
                                         if (!isUser) return reply(mess.only.daftarB)
-                                        var nom = mek.participant
-                                        const tag = {
+                                        var nom1 = mek.participant
+                                        const tag1 = {
                                                 text: `@${nom.split("@s.whatsapp.net")[0]} *Deu um beijo em ${tels} eitar*`,
-                                                contextInfo: { mentionedJid: [nom] }
+                                                contextInfo: { mentionedJid: [nom1] }
                                         }
-                                        client.sendMessage(from, tag, text, {quoted: mek})
+                                        client.sendMessage(from, tag1, text, {quoted: mek})
 										break
                                 case 'shadow':
                                         var gh = body.slice(7)
