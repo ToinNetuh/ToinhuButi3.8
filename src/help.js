@@ -1,11 +1,18 @@
 const help = (prefix) => {
 	return `
 「 *Toin BOT* 」
+Oiin @${nom.split("@s.whatsapp.net")[0]}
 
 ◪ *informações*
   ❏ Prefix: 「  ${prefix}  」
   ❏ Criador : Toin
   ❏ Como instalar o BOT: https://www.youtube.com/watch?v=4cjhlXo9aGo
+  
+  ❏ Outros Menus
+  ❏${prefix}toinmenu
+  ❏${prefix}nsfwmenu
+  ❏${prefix}menuadmin
+ 
 
 ◪ *SOBRE*
   │
@@ -128,14 +135,6 @@ const help = (prefix) => {
   ├─ ❏ ${prefix}infogempa
   ├─ ❏ ${prefix}jadwaltvnow
   └─ ❏ ${prefix}covid
-◪ *DONO*
-  │
-  ├─ ❏ ${prefix}setprefix
-  ├─ ❏ ${prefix}block
-  ├─ ❏ ${prefix}bc
-  ├─ ❏ ${prefix}bcgc
-  ├─ ❏ ${prefix}clone
-  └─ ❏ ${prefix}clearall
 ◪ *OUTROS*
   │
   ├─ ❏ ${prefix}send

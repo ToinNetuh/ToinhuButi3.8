@@ -8,6 +8,7 @@ const nsfwmenu = (prefix, pushname) => {
   ├─ ❏ ${prefix}nsfwass
   ├─ ❏ ${prefix}nsfwbelly
   ├─ ❏ ${prefix}nsfwsidebobs
+  ├─ ❏ ${prefix}ass
   ├─ ❏ ${prefix}nsfwahegao
   ├─ ❏ ${prefix}nsfwthighs
   ├─ ❏ ${prefix}nsfwarmpits

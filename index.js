@@ -1470,7 +1470,7 @@ case 'timer':
 						reply('❌ *ERROR* ❌')
 					}
 					break
-					case 'ass':
+					case 'ass1':
 				    try{
 						if (!isNsfw) return reply('❌ *NSFW NAUM ATIVADO* ❌')
                                                 if (!isUser) return reply(mess.only.daftarB)
@@ -1482,7 +1482,7 @@ case 'timer':
 						reply('❌ *ERROR* ❌')
 					}
 					break
-					case 'ass1':
+					case 'ass2':
 				    try{
 						if (!isNsfw) return reply('❌ *NSFW NAUM ATIVADO* ❌')
                                                 if (!isUser) return reply(mess.only.daftarB)
@@ -1494,7 +1494,7 @@ case 'timer':
 						reply('❌ *ERROR* ❌')
 					}
 					break
-					case 'ass2':
+					case 'ass':
 				    try{
 						if (!isNsfw) return reply('❌ *NSFW NAUM ATIVADO* ❌')
                                                 if (!isUser) return reply(mess.only.daftarB)
@@ -1928,6 +1928,17 @@ case 'timer':
                                         var nom = mek.participant
                                         const tag = {
                                                 text: `@${nom.split("@s.whatsapp.net")[0]} *TO AFK CCT ${tels} NAUM PERTURBE OKEI?*`,
+                                                contextInfo: { mentionedJid: [nom] }
+                                        }
+                                        client.sendMessage(from, tag, text, {quoted: mek})
+										break
+										case 'kiss':
+                                        tels = body.slice(4)
+                                        if (args.length < 1) return reply('marque uma pessoa')
+                                        if (!isUser) return reply(mess.only.daftarB)
+                                        var nom = mek.participant
+                                        const tag = {
+                                                text: `@${nom.split("@s.whatsapp.net")[0]} *Deu um beijo em ${tels} eitar*`,
                                                 contextInfo: { mentionedJid: [nom] }
                                         }
                                         client.sendMessage(from, tag, text, {quoted: mek})
